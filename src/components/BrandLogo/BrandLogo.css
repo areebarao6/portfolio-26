@@ -1,0 +1,116 @@
+.brand-logo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30px;
+}
+
+.brand-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.brand-initials {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.initial-letter {
+  font-size: 72px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(184, 134, 217, 0.5);
+  position: relative;
+  cursor: default;
+}
+
+.initial-a {
+  transform-origin: center;
+}
+
+.initial-j {
+  transform-origin: center;
+}
+
+.brand-underline {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .initial-letter {
+  background: linear-gradient(135deg, #d4a5f0, #ffd4e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(212, 165, 240, 0.6);
+}
+
+.dark-mode .brand-underline {
+  background: linear-gradient(90deg, transparent, #d4a5f0, transparent);
+  box-shadow: 0 0 10px #d4a5f0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .initial-letter {
+    font-size: 56px;
+  }
+
+  .brand-initials {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .initial-letter {
+    font-size: 48px;
+  }
+}
+
+
+
+
+
+

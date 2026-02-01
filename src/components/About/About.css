@@ -1,0 +1,277 @@
+.about-section {
+  padding: var(--section-padding);
+  background-color: var(--secondary-bg);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  margin-bottom: 15px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.about-card {
+  background-color: var(--primary-bg);
+  border-radius: var(--border-radius);
+  padding: 35px;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-color), var(--accent-light));
+  transform: scaleY(0);
+  transition: transform var(--transition-normal);
+}
+
+.about-card:hover::before {
+  transform: scaleY(1);
+}
+
+.about-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+  font-family: var(--font-display);
+}
+
+/* Education Styles */
+.education-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.education-icon {
+  font-size: 24px;
+  color: var(--accent-color);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.education-content {
+  flex: 1;
+}
+
+.education-degree {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.education-university {
+  font-size: 16px;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.education-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.education-semester,
+.education-cgpa {
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  background-color: var(--secondary-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+/* Experience Styles */
+.experience-section {
+  grid-column: span 1;
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-color), var(--accent-light));
+}
+
+.experience-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+
+.experience-dot {
+  position: absolute;
+  left: -22px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  border: 3px solid var(--secondary-bg);
+  box-shadow: 0 0 0 3px var(--accent-light);
+  z-index: 1;
+}
+
+.experience-content {
+  background-color: var(--secondary-bg);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-color);
+}
+
+.experience-content:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.experience-company {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.experience-period {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.experience-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  padding: 5px 12px;
+  background-color: var(--primary-bg);
+  color: var(--text-secondary);
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .experience-section {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 36px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .about-card {
+    padding: 25px;
+  }
+
+  .education-degree {
+    font-size: 18px;
+  }
+
+  .experience-timeline {
+    padding-left: 20px;
+  }
+
+  .experience-item {
+    padding-left: 25px;
+  }
+
+  .experience-dot {
+    left: -17px;
+  }
+}

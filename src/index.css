@@ -1,0 +1,134 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+:root {
+  /* Light Mode - Color Palette */
+  --primary-bg: #fafafa;
+  --secondary-bg: #ffffff;
+  --accent-color: #b886d9;
+  --accent-light: #d4a5f0;
+  --text-primary: #2d2d2d;
+  --text-secondary: #5a5a5a;
+  --text-light: #9a9a9a;
+  --pastel-blue: #e8f4f8;
+  --pastel-pink: #fce7f3;
+  --pastel-purple: #f3e8ff;
+  --pastel-green: #e8f5e9;
+  --pastel-lavender: #f0e6ff;
+  --pastel-peach: #ffe8e0;
+  --pastel-mint: #e0f5f0;
+  --border-color: #e8e8e8;
+  --shadow-sm: 0 2px 8px rgba(184, 134, 217, 0.1);
+  --shadow-md: 0 4px 16px rgba(184, 134, 217, 0.15);
+  --shadow-lg: 0 8px 32px rgba(184, 134, 217, 0.2);
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-max-width: 1200px;
+  --border-radius: 12px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #2d2d2d;
+  --accent-color: #d4a5f0;
+  --accent-light: #ffd4e5;
+  --text-primary: #f5f5f5;
+  --text-secondary: #d0d0d0;
+  --text-light: #9a9a9a;
+  --pastel-blue: #1e3a4a;
+  --pastel-pink: #3a2a3a;
+  --pastel-purple: #2d1f3a;
+  --pastel-green: #1e3a2a;
+  --pastel-lavender: #2d1f3a;
+  --pastel-peach: #3a2a1f;
+  --pastel-mint: #1e3a2a;
+  --border-color: #404040;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  background-color: var(--primary-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+/* Utility Classes */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.dark-mode ::selection {
+  background-color: var(--accent-light);
+  color: var(--text-primary);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+}

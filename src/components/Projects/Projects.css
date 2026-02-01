@@ -1,0 +1,131 @@
+.projects-section {
+  padding: var(--section-padding);
+  background-color: var(--secondary-bg);
+  position: relative;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.project-card {
+  background-color: var(--primary-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-light));
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg);
+  background-color: var(--secondary-bg);
+}
+
+/* Project Content */
+.project-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.project-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-family: var(--font-display);
+}
+
+.project-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  margin-top: auto;
+}
+
+.project-link:hover {
+  color: var(--accent-light);
+  gap: 12px;
+}
+
+.project-link svg {
+  font-size: 14px;
+}
+
+/* Decorative Element */
+.project-decoration {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, var(--pastel-blue) 0%, transparent 70%);
+  opacity: 0.3;
+  border-radius: 50%;
+  transition: all var(--transition-normal);
+}
+
+.project-card:hover .project-decoration {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .project-card {
+    padding: 25px;
+    min-height: 220px;
+  }
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+}
